@@ -47,6 +47,7 @@ jobs:
             echo "no data changes"
           else
             git commit -m "日次収集（6:00 JST）の結果をサイトデータへ反映する。"
+            git pull --rebase origin main
             git push
           fi
       - uses: actions/configure-pages@v5
