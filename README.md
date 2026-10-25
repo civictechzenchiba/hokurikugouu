@@ -17,6 +17,18 @@ CivicTechZenChiba（CTZC）として、令和8年8月石川・富山・福井豪
 
 再開するときは `site/data/site-status.json` の `archived` を `false` に戻し、`.github/workflows/` の 4 本の `schedule:` のコメントを外します。手順は [`docs/archive-runbook.md`](./docs/archive-runbook.md)。
 
+## 似た仕組みを作るとき
+
+このリポジトリは千葉版 [civictechzenchiba/chibagouu](https://github.com/civictechzenchiba/chibagouu) を 2026-09-02 に複製して作った。
+作った経緯・動いている仕組み・差し替える設定の一覧・踏んだ罠は、千葉版の README の「似た仕組みを作るとき」にまとめてある。
+複製の手順は [`docs/replication-checklist.md`](./docs/replication-checklist.md)、止め方は [`docs/archive-runbook.md`](./docs/archive-runbook.md)。
+
+北陸版で千葉版と違えたのは次の点。
+
+- 災害名：気象庁の命名が無いので「令和8年8月石川・富山・福井豪雨」とし、国の呼び名「令和8年8月27日からの大雨」を併記（`site/data/config.json` の `_name_comment`）
+- `regions` に石川・富山・福井の 3 県を並べ、NHK の県別ページの番号（`nhk_area`）を持たせた
+- 市町村ページの災害救助法の表示を、収集スクリプトが実際に書く値に合わせた（PR #2）
+
 ## このリポジトリで見ること
 
 要件の本体は [`docs/input/`](./docs/input/) です。
