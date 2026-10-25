@@ -7,7 +7,7 @@ name: Wayback archive
 # 直近6日以内に保存済みの URL はスキップ。日曜 3:10 JST（土曜 18:10 UTC）。
 
 on:
-  # 2026-10-25 に更新を止めた（docs/archive-runbook.md）。再開するときはコメントを外す
+  # 2026-10-25 に更新を終了した（docs/archive-runbook.md）。再開するときはコメントを外す
   # schedule:
   #   - cron: "10 18 * * 6"
   workflow_dispatch:

@@ -19,7 +19,7 @@
       var strong = document.createElement("strong");
       strong.textContent = isEnglish
         ? "This site is no longer updated."
-        : "このサイトは更新を止めています。";
+        : "このサイトの更新は終了しました。";
       var text = document.createElement("span");
       text.textContent = isEnglish
         ? " The content reflects " + (st.archived_at || "the date shown below") +
