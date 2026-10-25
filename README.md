@@ -6,14 +6,14 @@ CivicTechZenChiba（CTZC）として、令和8年8月石川・富山・福井豪
 
 検証・添削・協働編集を歓迎します。Issue や Pull Request で指摘してください。
 
-## 更新を止めました（2026-10-25）
+## 更新を終了しました（2026-10-25）
 
-千葉版（civictechzenchiba/chibagouu）と合わせて、2026-10-25 を最終更新日として自動処理を止めました。
+千葉版（civictechzenchiba/chibagouu）と合わせて、2026-10-25 を最終更新日として自動処理を終了しました。
 全ページの先頭に「このサイトの更新は終了しました」の帯が出ます。公式ページへのリンクは切れていくことがあります。
 
 北陸版は 2026-09-02 に千葉版を複製して立ち上げたあと、収集・更新検知・Wayback 保存・Slack 通知の 4 本を有効にしないまま来たので、
 公式ページの更新検知の記録（`site/data/watch-log/`）はありません。残っているのは支援策の一覧 `data/supports.csv`（84 行）と、
-止める日に 1 回だけ流した Wayback の保存（`site/data/archive-index.json`）です。
+終了する日に 1 回だけ流した Wayback の保存（`site/data/archive-index.json`）です。
 
 再開するときは `site/data/site-status.json` の `archived` を `false` に戻し、`.github/workflows/` の 4 本の `schedule:` のコメントを外します。手順は [`docs/archive-runbook.md`](./docs/archive-runbook.md)。
 

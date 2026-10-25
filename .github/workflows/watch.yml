@@ -4,7 +4,7 @@ name: Watch official pages
 # 6:00 JST の日次ジョブ（21:00 UTC）と重ならないよう 30 分ずらす。
 
 on:
-  # 2026-10-25 に更新を止めた（docs/archive-runbook.md）。再開するときはコメントを外す
+  # 2026-10-25 に更新を終了した（docs/archive-runbook.md）。再開するときはコメントを外す
   # schedule:
   #   - cron: "30 */3 * * *"
   workflow_dispatch:

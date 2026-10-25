@@ -4,7 +4,7 @@ name: Daily Slack digest
 # SLACK_WEBHOOK_URL（リポジトリ Secrets）が未設定のときは何もしない。0件の日も投稿しない。
 
 on:
-  # 2026-10-25 に更新を止めた（docs/archive-runbook.md）。再開するときはコメントを外す
+  # 2026-10-25 に更新を終了した（docs/archive-runbook.md）。再開するときはコメントを外す
   # schedule:
   #   - cron: "0 22 * * *"
   workflow_dispatch:
