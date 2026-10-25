@@ -7,7 +7,11 @@ from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont, ImageOps
 
+import site_config
+
 ROOT = Path(__file__).resolve().parents[1]
+# 脚注に出すサイトの URL。scheme を落として短く見せる
+SITE_LABEL = site_config.base_url().split("://", 1)[-1]
 # 引数にファイル名を渡すと、その分だけ描き直す（例: info-portal.png）。無指定なら全部。
 ONLY = set(sys.argv[1:])
 OUT = ROOT / "site" / "img"
@@ -157,7 +161,7 @@ class Sheet:
         fb = self.f("b", 22)
         self.d.text((M, y + 18), "図の中はタップしても進みません。実際のボタンはページの上にあります。", font=fb, fill=(255, 232, 170))
         self.d.text((M, y + 56), "CTZC（CivicTechZenChiba）有志運営　／　行政の公式発表ではありません", font=f, fill=(230, 240, 250))
-        self.d.text((M, y + 92), "申請・対象・期間は市町村・県・国の公式窓口で確認　／　office626.github.io/r808hokurikugouu/", font=f, fill=(180, 206, 232))
+        self.d.text((M, y + 92), "申請・対象・期間は市町村・県・国の公式窓口で確認　／　" + SITE_LABEL, font=f, fill=(180, 206, 232))
 
     def space(self, n=18):
         self.y += n

@@ -10,10 +10,14 @@ import sys
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
+import site_config
+
 ROOT = Path(__file__).resolve().parents[1]
 SITE = ROOT / "site"
 EN = SITE / "en"
 MANIFEST = EN / ".mirror-manifest.json"
+BASE = site_config.base_url()
+BASE_PATH = urlsplit(BASE).path
 
 PAIRED_ASSETS = [
     ("site/js/ideas-vote.js", "site/js/ideas-vote-en.js"),
@@ -61,10 +65,9 @@ def broken_internal_links(path: Path, text: str) -> list[str]:
         if not target_path:
             continue
         if target_path.startswith("/"):
-            marker = "/r808hokurikugouu/"
-            if marker not in target_path:
+            if BASE_PATH not in target_path:
                 continue
-            target = SITE / target_path.split(marker, 1)[1]
+            target = SITE / target_path.split(BASE_PATH, 1)[1]
         else:
             target = path.parent / target_path
         if target_path.endswith("/"):
@@ -93,7 +96,7 @@ def validate() -> tuple[list[str], list[tuple[Path, Path]]]:
         if 'property="og:locale" content="en_US"' not in en_text:
             errors.append(f"英語ページの og:locale が en_US ではありません: site/en/{rel}")
         canonical = re.search(r'<link rel="canonical" href="([^"]+)"', en_text)
-        if not canonical or "/r808hokurikugouu/en/" not in canonical.group(1):
+        if not canonical or not canonical.group(1).startswith(BASE + "en/"):
             errors.append(f"英語ページの canonical が /en/ ではありません: site/en/{rel}")
         if "language-switch.js" not in jp_text:
             errors.append(f"日本語ページに言語切替JSがありません: site/{rel}")

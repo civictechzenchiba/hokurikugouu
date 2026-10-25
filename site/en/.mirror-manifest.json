@@ -1,6 +1,6 @@
 {
-  "scripts/build_infographics.py": "9dceec35e25a23b0a1d84439b73cda24a93b06052e55731000d72d47a39274a7",
-  "scripts/build_infographics_en.py": "c22f52e1fd5d2054cdf8124674a0a302d39eb96fe5e9514833ce35ce92cf68bc",
+  "scripts/build_infographics.py": "9b8a4908f560eae218dbd67c7fbb0079383e9eee83a1b7c890b497013a4214e6",
+  "scripts/build_infographics_en.py": "f25918e7b0329594745611a287de5325e658ad2d5f58ef082de4966832071a7c",
   "site/data/feature-ideas-en.json": "504dc6128758679fd16aa2cf9357b7e0dfac6acb4df8794814e73a18ee2a3240",
   "site/data/feature-ideas.json": "88d874afde79782d88dbb345c47b1218499b0edb9e32b1f4a1b761258e375b8e",
   "site/en/index.html": "e4e538252eca4ce5b40d80daa336f6d4c866d9684acf6704c905580840c472bd",

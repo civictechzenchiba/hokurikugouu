@@ -31,7 +31,7 @@ python scripts/archive_pages.py
 ```
 
 `archive.yml` が日曜 3:10 JST に回していますが、最後にもう一度、手で流します。
-このサイト自身のページ（`https://office626.github.io/r808hokurikugouu/` 以下）も
+このサイト自身のページ（`site/data/config.json` の `base_url` 以下）も
 [Save Page Now](https://web.archive.org/save) で保存しておいてください。
 
 ### 3. 帯を出す

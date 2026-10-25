@@ -7,7 +7,11 @@ from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont, ImageOps
 
+import site_config
+
 ROOT = Path(__file__).resolve().parents[1]
+# 脚注に出すサイトの URL。scheme を落として短く見せる
+SITE_LABEL = site_config.base_url().split("://", 1)[-1]
 # 引数にファイル名を渡すと、その分だけ描き直す（例: info-portal-en.png）。無指定なら全部。
 ONLY = set(sys.argv[1:])
 OUT = ROOT / "site" / "img"
@@ -200,7 +204,7 @@ class Sheet:
         )
         self.d.text(
             (916, y + 118),
-            "office626.github.io/r808hokurikugouu/",
+            SITE_LABEL,
             font=self.f("r", 15),
             fill=(180, 206, 232),
         )
