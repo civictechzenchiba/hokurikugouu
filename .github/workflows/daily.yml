@@ -1,8 +1,9 @@
 name: Daily collect and GitHub Pages
 
 on:
-  schedule:
-    - cron: "0 21 * * *"
+  # 2026-10-25 に更新を止めた（docs/archive-runbook.md）。再開するときはコメントを外す
+  # schedule:
+  #   - cron: "0 21 * * *"
   workflow_dispatch:
 
 permissions:
