@@ -4,17 +4,20 @@
     {
       "slug": "pref-ishikawa",
       "name": "石川県",
-      "name_en": "Ishikawa Prefecture"
+      "name_en": "Ishikawa Prefecture",
+      "nhk_area": "170"
     },
     {
       "slug": "pref-toyama",
       "name": "富山県",
-      "name_en": "Toyama Prefecture"
+      "name_en": "Toyama Prefecture",
+      "nhk_area": "160"
     },
     {
       "slug": "pref-fukui",
       "name": "福井県",
-      "name_en": "Fukui Prefecture"
+      "name_en": "Fukui Prefecture",
+      "nhk_area": "180"
     },
     {
       "slug": "japan",
