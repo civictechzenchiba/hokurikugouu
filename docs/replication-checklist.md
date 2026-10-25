@@ -34,6 +34,18 @@ cd /tmp/seed.git && git push --mirror https://github.com/<owner>/<new-repo>.git
 
 `regions` は市町村以外のまとまり（県・国）です。**複数県にまたがる災害では、県のぶんだけ並べます。**
 
+config.json を書き換えたら、ページと文書に静的に書いてある古い URL（canonical・og:url・hreflang・
+GitHub へのリンク・README）を新しい値に行き渡らせます。sitemap と robots、インフォグラフィックの
+脚注はそれぞれの生成スクリプトで作り直します。
+
+```
+python3 scripts/apply_site_urls.py --dry-run   # 置き換える箇所を数えるだけ
+python3 scripts/apply_site_urls.py
+python3 scripts/build_sitemap.py
+python3 scripts/build_infographics.py && python3 scripts/build_infographics_en.py   # Pillow が要る
+python3 scripts/check_bilingual.py --update-manifest
+```
+
 ## 2. 外部サービスをつなぎ替える（忘れると事故になる）
 
 **このまま複製すると、新しいサイトに届いた通報が千葉のフォームに入ります。** 必ず差し替えてください。

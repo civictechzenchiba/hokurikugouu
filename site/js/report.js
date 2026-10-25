@@ -10,6 +10,7 @@
   })();
   var root = (script && script.src) ? script.src.replace(/js\/report\.js(\?.*)?$/, "") : "";
   var config = null;
+  var repo = "";
   var readyCallbacks = [];
   var T = EN ? {
     footerLead: "Is something on this page wrong, outdated, or a broken link?",
@@ -42,7 +43,7 @@
       if (e.target && target) u += "&" + encodeURIComponent(e.target) + "=" + encodeURIComponent(target);
       return u;
     }
-    return "https://github.com/office626/r808hokurikugouu/issues/new?title=" +
+    return "https://github.com/" + repo + "/issues/new?title=" +
       encodeURIComponent(T.issueTitle(target)) + "&body=" + encodeURIComponent(T.issueBody(page, target));
   }
   function decorate(scope) {
@@ -87,10 +88,18 @@
   window.Report = { link: link, decorate: decorate, itemLink: itemLink, onReady: onReady };
 
   document.querySelectorAll("[data-share]").forEach(mountFooter);
-  fetch(root + "data/report-config.json", { cache: "no-store" })
-    .then(function (r) { return r.json(); })
-    .then(function (c) { config = c || {}; })
-    .catch(function () { config = {}; })
+  // 通報先（report-config.json）と、Issue に落とすときの repo（config.json）を読む。
+  // config.json が読めなくても通報先が決まっていれば困らないので、別々に失敗を飲む
+  Promise.all([
+    fetch(root + "data/report-config.json", { cache: "no-store" })
+      .then(function (r) { return r.json(); })
+      .then(function (c) { config = c || {}; })
+      .catch(function () { config = {}; }),
+    fetch(root + "data/config.json", { cache: "no-store" })
+      .then(function (r) { return r.json(); })
+      .then(function (c) { repo = (c && c.repo) || ""; })
+      .catch(function () { repo = ""; })
+  ])
     .then(function () {
       decorate(document);
       Array.prototype.forEach.call(document.querySelectorAll(".report-footer a"), function (a) { a.href = link(document.title); });
