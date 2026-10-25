@@ -1,5 +1,5 @@
 {
-  "archived": false,
-  "archived_at": "",
+  "archived": true,
+  "archived_at": "2026-10-25",
   "note": "更新を止めるときは archived を true にし、archived_at に最終更新日（YYYY-MM-DD）を入れる。ページ側の書き換えは要らない。手順は docs/archive-runbook.md"
 }
