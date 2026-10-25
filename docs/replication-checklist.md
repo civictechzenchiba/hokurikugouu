@@ -10,7 +10,7 @@ fork にすると PR の base が既定で千葉版に向き、内容が新し�
 （千葉版でも base の取り違えが3回ありました）。
 
 ```
-git clone --bare https://github.com/office626/r808hokurikugouu.git /tmp/seed.git
+git clone --bare https://github.com/civictechzenchiba/hokurikugouu.git /tmp/seed.git
 cd /tmp/seed.git && git push --mirror https://github.com/<owner>/<new-repo>.git
 ```
 

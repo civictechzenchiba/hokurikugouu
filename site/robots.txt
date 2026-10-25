@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://office626.github.io/r808hokurikugouu/sitemap.xml
+Sitemap: https://civictechzenchiba.github.io/hokurikugouu/sitemap.xml

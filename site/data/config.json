@@ -1,8 +1,8 @@
 {
   "_comment": "このサイト固有の設定。別の災害・地域へ複製するときは、まずここを差し替える。手順は docs/replication-checklist.md",
-  "repo": "office626/r808hokurikugouu",
-  "base_url": "https://office626.github.io/r808hokurikugouu/",
-  "ua_prefix": "CTZC-r808hokurikugouu",
+  "repo": "civictechzenchiba/hokurikugouu",
+  "base_url": "https://civictechzenchiba.github.io/hokurikugouu/",
+  "ua_prefix": "CTZC-hokurikugouu",
   "disaster": {
     "name": "令和8年8月石川・富山・福井豪雨",
     "name_en": "August 2026 Ishikawa, Toyama and Fukui Heavy Rain",
